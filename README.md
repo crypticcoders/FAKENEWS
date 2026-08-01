@@ -4,6 +4,18 @@ A from-scratch machine learning pipeline that classifies a news article as **Rea
 
 Built during the **AI & ML Summer Internship Program at the Indian Institute of Computing and Technology (IICT)**, this project takes the full supervised-learning journey: raw data → cleaning → TF-IDF vectorization → four competing classifiers → evaluation → a live, deployed Streamlit app.
 
+<p align="center">
+  <img src="assets/accuracy_comparison.png" alt="Model accuracy comparison" width="700">
+</p>
+
+<p align="center">
+  <img alt="Python" src="https://img.shields.io/badge/Python-3.10%2B-blue?logo=python&logoColor=white">
+  <img alt="scikit-learn" src="https://img.shields.io/badge/scikit--learn-ML-orange?logo=scikit-learn&logoColor=white">
+  <img alt="Streamlit" src="https://img.shields.io/badge/Streamlit-Deployed-FF4B4B?logo=streamlit&logoColor=white">
+  <img alt="Status" src="https://img.shields.io/badge/Status-Complete-brightgreen">
+  <img alt="License" src="https://img.shields.io/badge/License-MIT-lightgrey">
+</p>
+
 ---
 
 ## 📌 Table of Contents
@@ -132,6 +144,10 @@ Four classifiers spanning **parametric** and **non-parametric** families were tr
 
 ## 🏆 Results
 
+<p align="center">
+  <img src="assets/confusion_matrix_grid.png" alt="Confusion Matrix Grid for All Models" width="750">
+</p>
+
 *(Metrics computed on the 14,419-article held-out test set.)*
 
 | Model | Accuracy | Precision | Recall | F1-Score |
@@ -141,11 +157,21 @@ Four classifiers spanning **parametric** and **non-parametric** families were tr
 | 🥉 **Logistic Regression** | 95.46% | 0.9524 | 0.9597 | 0.9556 |
 | **K-Nearest Neighbours** | 68.31% | 0.6242 | 0.9639 | 0.7580 |
 
+<p align="center">
+  <img src="assets/metric_comparison.png" alt="Comprehensive Metric Comparison Across Classifiers" width="750">
+</p>
+
 **Random Forest came out on top** and was serialized for deployment due to its competitive accuracy, strong recall on the "real" class, and resistance to high-dimensional sparseness compared to distance-based methods.
 
 ### Most Discriminative Terms
 
-Random Forest's Gini importance surfaced the terms the model actually leans on. Notably, wire-service and formatting artifacts (`said`, `via`, `image`, `washington`) dominate — a reminder that lexical classifiers partly key off *stylistic* fingerprints of how an article was written/sourced, not just semantic truthfulness.
+Random Forest's Gini importance surfaced the terms the model actually leans on:
+
+<p align="center">
+  <img src="assets/top_features.png" alt="Top 15 Most Discriminative TF-IDF Keywords" width="650">
+</p>
+
+Notably, wire-service and formatting artifacts (`said`, `via`, `image`, `washington`) dominate — a reminder that lexical classifiers partly key off *stylistic* fingerprints of how an article was written/sourced, not just semantic truthfulness.
 
 ---
 
